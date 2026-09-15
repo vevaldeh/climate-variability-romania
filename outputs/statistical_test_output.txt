@@ -1,0 +1,107 @@
+STATISTICAL ANALYSIS OF CLIMATE VARIABILITY IN ROMANIA
+Author: Oana - Viviana Scarlat
+Period: 1995-2024
+
+================ OLS MODEL ================
+
+Call:
+lm(formula = mean_temperature ~ year, data = national_annual)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.98118 -0.38113 -0.03321  0.32137  0.94234 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -155.09454   21.93258  -7.071 1.08e-07 ***
+year           0.08216    0.01091   7.528 3.37e-08 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5174 on 28 degrees of freedom
+Multiple R-squared:  0.6693,	Adjusted R-squared:  0.6575 
+F-statistic: 56.67 on 1 and 28 DF,  p-value: 3.365e-08
+
+
+================ MANN-KENDALL ================
+tau = 0.646, 2-sided pvalue =5.9605e-07
+
+================ WELCH T-TEST ================
+
+	Welch Two Sample t-test
+
+data:  period_2010_2024 and period_1995_2009
+t = 4.2075, df = 27.923, p-value = 0.0002414
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.5551721 1.6088279
+sample estimates:
+mean of x mean of y 
+10.547333  9.465333 
+
+
+================ JARQUE-BERA ================
+
+	Jarque Bera Test
+
+data:  ols_residuals
+X-squared = 0.772, df = 2, p-value = 0.6798
+
+
+================ DURBIN-WATSON ================
+
+	Durbin-Watson test
+
+data:  ols_model
+DW = 1.2652, p-value = 0.01016
+alternative hypothesis: true autocorrelation is greater than 0
+
+
+================ BREUSCH-PAGAN ================
+
+	studentized Breusch-Pagan test
+
+data:  ols_model
+BP = 0.066013, df = 1, p-value = 0.7972
+
+
+================ NEWEY-WEST ================
+
+t test of coefficients:
+
+               Estimate  Std. Error t value  Pr(>|t|)    
+(Intercept) -155.094544   41.730740 -3.7166 0.0008936 ***
+year           0.082160    0.020764  3.9568 0.0004717 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+================ KRUSKAL-WALLIS: TEMPERATURE ================
+
+	Kruskal-Wallis rank sum test
+
+data:  max_temperature by region
+Kruskal-Wallis chi-squared = 155.35, df = 7, p-value < 2.2e-16
+
+
+================ KRUSKAL-WALLIS: PRECIPITATION ================
+
+	Kruskal-Wallis rank sum test
+
+data:  daily_precipitation by region
+Kruskal-Wallis chi-squared = 38.801, df = 7, p-value = 2.133e-06
+
+
+================ PAIRED MONTHLY T-TEST ================
+
+	Paired t-test
+
+data:  monthly_profile$temp_2010_2024 and monthly_profile$temp_1995_2009
+t = 5.9836, df = 11, p-value = 9.139e-05
+alternative hypothesis: true mean difference is not equal to 0
+95 percent confidence interval:
+ 0.6852908 1.4827818
+sample estimates:
+mean difference 
+       1.084036 
+

@@ -1,0 +1,18 @@
+"result","value"
+"OLS annual trend (°C/year)",0.0821601779755276
+"OLS decadal trend (°C/decade)",0.821601779755276
+"OLS R-squared",0.669291101216334
+"Mann-Kendall Tau",0.645909309387207
+"Mann-Kendall p-value",5.96046447753906e-07
+"Mean temperature 1995-2009 (°C)",9.46533333333333
+"Mean temperature 2010-2024 (°C)",10.5473333333333
+"Difference between periods (°C)",1.082
+"Welch test p-value",0.000241381450076994
+"Durbin-Watson p-value",0.0101621022602645
+"Breusch-Pagan p-value",0.797233454215643
+"Jarque-Bera p-value",0.679772081337383
+"Newey-West p-value for year",0.000471696575123255
+"Kruskal-Wallis temperature p-value",3.05228602686164e-30
+"Kruskal-Wallis precipitation p-value",2.13318631503728e-06
+"Average monthly profile shift (°C)",1.08403628733489
+"Paired monthly t-test p-value",9.13854924727661e-05
