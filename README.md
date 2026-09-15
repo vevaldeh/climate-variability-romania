@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project was developed as my Bachelor's dissertation in **Economic Statistics and Forecasting** at the Bucharest University of Economic Studies.
+This project was developed as my Bachelor's dissertation in **Statistics and Economic Forecasting** at the Bucharest University of Economic Studies.
 
 The study examines climate variability across Romania over the **1995–2024** period, with three main analytical perspectives:
 
@@ -51,6 +51,7 @@ The data were checked, cleaned and aggregated at national, regional and monthly 
 
 ### R packages
 
+- 'readxl'
 - `Kendall`
 - `tseries`
 - `lmtest`
@@ -87,7 +88,7 @@ The **Kruskal–Wallis test** was used to determine whether the regional distrib
 
 Monthly mean temperature profiles were calculated separately for 1995–2009 and 2010–2024.
 
-A **paired-samples t-test** was applied to the twelve corresponding monthly averages to test whether the overall annual temperature profile shifted between the two periods.
+A **paired-samples t-test** was applied to the twelve corresponding monthly averages to test whether the overall annual temperature profile shifted between the two periods. This analysis was originally performed in Microsoft Excel for the dissertation and was reproduced in R for the GitHub version of the project.
 
 ## Key Results
 
@@ -99,7 +100,7 @@ The OLS model estimated an annual temperature increase of approximately:
 
 The model explained around **66.9% of the variation** in annual mean temperature (`R² = 0.6693`), and the time coefficient was highly statistically significant.
 
-Residual diagnostics indicated acceptable normality and no evidence of heteroscedasticity. Positive residual autocorrelation was detected, so Newey–West robust standard errors were applied. The year coefficient remained statistically significant after this correction.
+Residual diagnostics indicated acceptable normality and no evidence of heteroscedasticity. Positive residual autocorrelation was detected, so Newey–West robust standard errors were applied. The year coefficient remained statistically significant after this correction (`p = 0.0004717`). Positive residual autocorrelation was detected, so Newey–West robust standard errors were applied. The year coefficient remained statistically significant after this correction.
 
 The **Mann–Kendall test** independently confirmed a strong increasing trend (`Kendall's Tau = 0.646`, `p < 0.001`).
 
@@ -126,8 +127,8 @@ with the largest increase observed in the **South-West region (+1.53°C)**.
 
 The Kruskal–Wallis tests confirmed statistically significant regional differences for both:
 
-- maximum temperature (`H = 154.3`, `p < 2.2e-16`);
-- daily precipitation (`H = 38.801`, `p = 2.133e-06`).
+- maximum temperature (`χ² = 155.35`, `df = 7`, `p < 2.2e-16`);
+- daily precipitation (`χ² = 38.801`, `df = 7`, `p = 2.133e-06`).
 
 Unlike temperature, precipitation did not change uniformly: some regions recorded increases while others recorded decreases.
 
@@ -144,7 +145,7 @@ The largest increases were observed in:
 
 May was the only month with a slight decrease (**−0.19°C**).
 
-Across the twelve months, the average difference between the two temperature profiles was approximately **+1.084°C**. The paired-samples t-test confirmed that the shift was statistically significant (`p < 0.001`).
+Across the twelve months, the average difference between the two temperature profiles was approximately **+1.084°C**. The paired-samples t-test confirmed that the shift was statistically significant (`t = 5.984`, `df = 11`, `p = 9.139e-05`).
 
 These findings indicate both a general warming of the annual temperature profile and particularly pronounced changes toward the end of summer, the beginning of autumn and the cold season.
 
@@ -168,7 +169,7 @@ The analysis uses climate data aggregated at county, regional and national level
 
 The division of the 30-year period into two equal 15-year intervals is useful for comparison but represents a methodological choice.
 
-Positive autocorrelation was identified in the OLS residuals. This was addressed using Newey–West robust standard errors and by complementing the linear model with the Mann–Kendall trend test.
+Positive residual autocorrelation was identified by the Durbin–Watson test (`DW = 1.2652`, `p = 0.01016`). This was addressed using Newey–West robust standard errors and by complementing the linear model with the Mann–Kendall trend test.
 
 Precipitation was analysed using aggregated mean daily values; therefore, the project does not directly model extreme rainfall events or drought episodes.
 
@@ -178,7 +179,7 @@ Precipitation was analysed using aggregated mean daily values; therefore, the pr
 
 ## Academic Context
 
-**Bachelor's Dissertation – Economic Statistics and Forecasting**  
+**Bachelor's Dissertation – Statistics and Economic Forecasting**  
 Faculty of Cybernetics, Statistics and Economic Informatics  
 Bucharest University of Economic Studies  
 2026
