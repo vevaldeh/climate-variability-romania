@@ -51,7 +51,7 @@ The data were checked, cleaned and aggregated at national, regional and monthly 
 
 ### R packages
 
-- 'readxl'
+- `readxl`
 - `Kendall`
 - `tseries`
 - `lmtest`
