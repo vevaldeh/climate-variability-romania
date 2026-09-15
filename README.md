@@ -90,6 +90,32 @@ Monthly mean temperature profiles were calculated separately for 1995–2009 and
 
 A **paired-samples t-test** was applied to the twelve corresponding monthly averages to test whether the overall annual temperature profile shifted between the two periods. This analysis was originally performed in Microsoft Excel for the dissertation and was reproduced in R for the GitHub version of the project.
 
+## Visual Results
+
+### Mean Annual Temperature in Romania (1995–2024)
+
+<p align="center">
+  <img src="outputs/national_temperature_trend.png" alt="Mean Annual Temperature in Romania" width="800"/>
+</p>
+
+This figure shows the long-term warming trend in Romania between 1995 and 2024.
+
+### Monthly Temperature Profile: 1995–2009 vs 2010–2024
+
+<p align="center">
+  <img src="outputs/monthly_temperature_profile.png" alt="Monthly Temperature Profile" width="800"/>
+</p>
+
+This figure highlights the upward shift in monthly temperatures in the more recent period.
+
+### Regional Maximum Temperature Comparison
+
+<p align="center">
+  <img src="outputs/regional_max_temperature_comparison.png" alt="Regional Maximum Temperature Comparison" width="800"/>
+</p>
+
+This chart compares regional maximum temperatures across Romania's eight development regions.
+
 ## Key Results
 
 ### Long-term warming trend
